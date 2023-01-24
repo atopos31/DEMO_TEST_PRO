@@ -3,10 +3,12 @@ package Rout
 import (
 	"demo/Databace_Operate"
 	"demo/Global"
+	"demo/Tool"
 	"demo/email"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func POSTlogin(c *gin.Context) {
@@ -18,16 +20,19 @@ func POSTlogin(c *gin.Context) {
 	}
 	//获取数据后与数据库对比
 	//如果与数据库数据相符，返回ok：true，js会向home发出GET请求
-	if Databace_O.Login_verify(&userdata) {
+	name,OK :=Databace_O.Login_verify(&userdata)
+	if OK {
+		token,_:=Tool.Token(userdata)
 		c.JSON(http.StatusOK, gin.H{
 			"ok":       true,
-			"username": userdata.Username, //以后可以通过在数据库查找并获取用户名，js返回到路径中
-			"key":      userdata.Key,
+			"name":     name,
+			"token":    token,
 		})
 	} else {
 		c.JSON(http.StatusOK, gin.H{
 			"ok":       false,
-			"username": nil, //以后可以通过在数据库查找并获取用户名，js返回到路径中
+			"name":		nil,
+			"token":    nil, 
 		})
 	}
 

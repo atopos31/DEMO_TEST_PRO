@@ -38,8 +38,10 @@ document.querySelector('.signIn').addEventListener('click', function () {
         .then(function (data) {
             console.log(data)
             if (data.ok) {
-                //通过query参数定位指定页面
-                window.location.href = '/home?name='+data.username+'&key='+data.key;
+                console.log(data.token)
+                localStorage.setItem('token', data.token);
+                //通过query参数和token定位指定页面
+                window.location.href = '/home?name='+data.name+'&token='+data.token;
             } else {
                 alert('Incorrect email or password, please try again.');
             }

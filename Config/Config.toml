@@ -5,8 +5,8 @@
 [mysql]
     host = "127.0.0.1"
     port = "3306"
-    username= "your_username"
-    password= "your_password"
+    username= "root"
+    password= "980845"
     method="tcp"
     database="userdata"
     config="charset=utf8mb4&parseTime=True&loc=Local"  
@@ -25,6 +25,11 @@
 [email]
     host = "smtp.qq.com"
     port = 25
-    username = "your_email"
-    password = "邮箱授权码"
+    username = "2945294768@qq.com"
+    password = "pfkeszndirksdhcc"
     expires = 500
+
+[jwt]
+    expires = 604800 # token过期时间 (7 day)
+    issuer = "hackerxiao" # 发行人
+    key = "hackerxiaox" # 签名密钥

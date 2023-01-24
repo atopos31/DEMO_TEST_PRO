@@ -2,36 +2,22 @@ package Databace_O
 
 import (
 	"demo/Global"
-	"demo/Tool"
 )
 
-func Login_verify(Userdata *Global.User) bool { //登陆验证
+func Login_verify(Userdata *Global.User) (string,bool) { //登陆验证
 	var V_userdata Global.User
 	Global.DB.Where("email=?", Userdata.Email).First(&V_userdata)
 	if Userdata.Password == V_userdata.Password {
-		Userdata.Username = V_userdata.Username
-		Userdata.Key = Tool.KeyRand(6)
-		Global.DB.Model(&V_userdata).Where("username = ?", V_userdata.Username).Update("key", Userdata.Key)
-		return true
+		return V_userdata.Username,true
 	} else {
-		return false
+		return "nil",false
 	}
 }
 
-func Key_verify(name string, key string) bool { //key验证
-	var V_userdata Global.User
-	Global.DB.Where("username=?", name).First(&V_userdata)
-	if V_userdata.Key == key {
-		Global.DB.Model(&V_userdata).Where("username = ?", V_userdata.Username).Update("key", nil)
-		return true
-	} else {
-		return false
-	}
-}
 
-func User_data_Queries(Username string) Global.User { //用户信息查找
+func User_data_Queries(Name string) Global.User { //用户信息查找
 	var U_userdata Global.User
-	Global.DB.Where("username=?", Username).First(&U_userdata)
+	Global.DB.Where("username=?", Name).First(&U_userdata)
 	return U_userdata
 }
 

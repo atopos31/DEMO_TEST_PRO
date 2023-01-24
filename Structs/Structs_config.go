@@ -35,11 +35,18 @@ type Email struct {
 	Expires  int    `mapstructure:"expires"`  
 }
 
+type Jwt struct {
+	Expires int `mapstructure:"expires"`  
+	Issuer string  `mapstructure:"issuer"`  
+	Key string `mapstructure:"key"`  
+}
+
 type Config struct {
 	Common Common `mapstructure:"common"`
 	Mysql  Mysql  `mapstructure:"mysql"`
 	Rdis   Rdis   `mapstructure:"rdis"`
 	Email  Email `mapstructure:"email"`
+	Jwt Jwt `mapstructure:"jwt"`  
 }
 
 //将Mysql连接数据格式化

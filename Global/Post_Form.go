@@ -5,7 +5,6 @@ type User struct{
 	Username string 
 	Email string `json:"email" binding:"required"`
 	Password string `json:"password" binding:"required"`
-	Key string 
 }
 
 //登录信息结构体

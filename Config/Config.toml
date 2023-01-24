@@ -5,8 +5,8 @@
 [mysql]
     host = "127.0.0.1"
     port = "3306"
-    username= "root"
-    password= "980845"
+    username= ""
+    password= ""
     method="tcp"
     database="userdata"
     config="charset=utf8mb4&parseTime=True&loc=Local"  
@@ -25,8 +25,8 @@
 [email]
     host = "smtp.qq.com"
     port = 25
-    username = "2945294768@qq.com"
-    password = "pfkeszndirksdhcc"
+    username = ""
+    password = ""
     expires = 500
 
 [jwt]

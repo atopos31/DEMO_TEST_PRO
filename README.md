@@ -1,6 +1,6 @@
 # Glong简单的登录注册页面
 ## 框架
-简单的golang+gin+gorm,Mysql保存用户数据，Ridis保存验证码，邮件验证码发送使用gomail实现，前后端分离。
+简单的golang+gin+gorm,Mysql保存用户数据，Redis保存验证码，邮件验证码发送使用gomail实现，前后端分离。
 ## 配置文件
 ```
 [common]

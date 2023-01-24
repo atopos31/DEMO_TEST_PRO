@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>找回密码</title>
+    <link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./static/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container forget-password-container">
+            <div class="form">
+                <h2>Forget</h2>
+                <input type="email" name="email" id="email" placeholder="email...">
+                <input type="captcha" name="captcha" id="captcha" placeholder="captcha...">
+                <input type="password" name="password" id="password" placeholder="new password...">
+                <button class="sendcaptcha">Send captcha</button>
+                <button class="reset-password">update password</button>
+                <button  class="return">return</button>
+            </div>
+        </div>
+        <div class="overlay_container forget-password-overlay">
+            <div class="overlay"></div>
+            <div class="overlay_panel ">
+                <h2>hello</h2>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <script src="./static/forget.js"></script>
+
+</body>
+
+
+</html>

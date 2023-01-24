@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Welcome, <span id="username"></span>!</h1>
+    <p>Your email is <span id="email"></span>.</p>
+</body>
+
+<script>
+    var data = '{{ . }}';
+    var obj = JSON.parse(data);
+    const username = obj.username;
+    const email = obj.email;
+    console.log(obj)
+
+    document.getElementById('username').innerHTML = username;
+    document.getElementById('email').innerHTML = email;
+</script>
+
+</html>

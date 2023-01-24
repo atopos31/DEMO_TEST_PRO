@@ -1,0 +1,30 @@
+[common]
+    orgin ="http://127.0.0.1"
+    port = "8080" 
+
+[mysql]
+    host = "127.0.0.1"
+    port = "3306"
+    username= "root"
+    password= "980845"
+    method="tcp"
+    database="userdata"
+    config="charset=utf8mb4&parseTime=True&loc=Local"  
+
+[rdis]
+    host = "127.0.0.1"
+    port = "6379"
+    db = 0
+    password = ""
+    method ="tcp"
+    MaxIdle = 200
+    MaxActive = 100
+    Wait = true
+    IdleTimeout = 1
+
+[email]
+    host = "smtp.qq.com"
+    port = 25
+    username = "2945294768@qq.com"
+    password = "egutaammgacodgfg"
+    expires = 500

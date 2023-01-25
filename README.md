@@ -10,10 +10,10 @@
 [mysql]
     host = "127.0.0.1"
     port = "3306"
-    username= "your_username"
-    password= "your_password"
+    username= ""
+    password= ""
     method="tcp"
-    database="仓库名称"
+    database="userdata"
     config="charset=utf8mb4&parseTime=True&loc=Local"  
 
 [rdis]
@@ -30,8 +30,13 @@
 [email]
     host = "smtp.qq.com"
     port = 25
-    username = "your_email"
-    password = "邮箱授权码"
+    username = ""
+    password = ""
     expires = 500
+
+[jwt]
+    expires = 604800 # token过期时间 (7 day)
+    issuer = "hackerxiao" # 发行人
+    key = "hackerxiaox" # 签名密钥
 ```
 ![demo](./html/demo.gif)
